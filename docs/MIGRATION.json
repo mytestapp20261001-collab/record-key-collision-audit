@@ -1,0 +1,174 @@
+{
+  "schema_version": 1,
+  "slug": "record-key-collision-audit",
+  "domain": "data",
+  "guidance_group": "maximal",
+  "source_commit": "1286096c10a23bbb04aca83679ae3c31f3326030",
+  "source_repository": "mytestapp20261001-collab/mytest-engineering-toolbox",
+  "source_repository_id": 1411411288,
+  "source_path": "tools/record-key-collision-audit",
+  "root_path": ".",
+  "publication_status": "prepared_only; coordinator verifies final repository identity and remote CI",
+  "expected_repository": "mytestapp20261001-collab/record-key-collision-audit",
+  "repository_id": null,
+  "preserved_files": [
+    {
+      "path": "OPTIONAL_MYTEST.md",
+      "size_bytes": 3080,
+      "sha256": "377811f43d46b8df1469a912361ab8a2abf344e939e33ed0bca1631409f8dc17",
+      "git_blob_sha1": "9298c9a7a4f74ff0cefc85eac5fdcac40f789839",
+      "utf8": true,
+      "source_path": "tools/record-key-collision-audit/OPTIONAL_MYTEST.md"
+    },
+    {
+      "path": "README.md",
+      "size_bytes": 5736,
+      "sha256": "ae55ac84f0a13e49b8377f5cd7d687784d7ef3345578cc80928ceff24a6c7408",
+      "git_blob_sha1": "eba76a991fd634a6d60fab95c747d769191738bd",
+      "utf8": true,
+      "source_path": "tools/record-key-collision-audit/README.md"
+    },
+    {
+      "path": "SKILL.md",
+      "size_bytes": 5237,
+      "sha256": "cccf8d688c246923267eb8af09051e103c1742d88a381184ab4d423530595558",
+      "git_blob_sha1": "2f6a3b3253a49b27aaef1a3fd20173b31c30acc3",
+      "utf8": true,
+      "source_path": "tools/record-key-collision-audit/SKILL.md"
+    },
+    {
+      "path": "examples/fail.json",
+      "size_bytes": 68,
+      "sha256": "39e61b80c4a58688c3efda88583878a8a0764d32743a781d56ac0c46d2532101",
+      "git_blob_sha1": "72ec8223e79e04366bb79e9648437d75ba70d685",
+      "utf8": true,
+      "source_path": "tools/record-key-collision-audit/examples/fail.json"
+    },
+    {
+      "path": "examples/malformed.json",
+      "size_bytes": 25,
+      "sha256": "94321514f637a2a738e6904c228562355c1c44b46c20636b3e0856283148dca1",
+      "git_blob_sha1": "6761df8e7c1d9a50c3cca654e2533e985af76d45",
+      "utf8": true,
+      "source_path": "tools/record-key-collision-audit/examples/malformed.json"
+    },
+    {
+      "path": "examples/pass.json",
+      "size_bytes": 46,
+      "sha256": "bf5ce6d50b0bb9186dc02638587e2799e809af15bdd182ab7632b2563840d4cf",
+      "git_blob_sha1": "7e2079e0be8f03ed2d439ffef0a1c877dcc05a70",
+      "utf8": true,
+      "source_path": "tools/record-key-collision-audit/examples/pass.json"
+    },
+    {
+      "path": "test_tool.py",
+      "size_bytes": 7257,
+      "sha256": "f1deb6b60cdf12424cddb99309e0f4b8041eae40856acf77aa03a492e489ffc7",
+      "git_blob_sha1": "f31c2668a518e206be3988ccf01cac80cce63a9c",
+      "utf8": true,
+      "source_path": "tools/record-key-collision-audit/test_tool.py"
+    },
+    {
+      "path": "tool.py",
+      "size_bytes": 7548,
+      "sha256": "84558da48ff41ba72f5d2318c336d107d4aae984f53392783654b63ac3d67f5f",
+      "git_blob_sha1": "24432babbb53e9c02daa8d768a8f1a994048b9c1",
+      "utf8": true,
+      "source_path": "tools/record-key-collision-audit/tool.py"
+    },
+    {
+      "path": "verification.json",
+      "size_bytes": 1158,
+      "sha256": "b7129f1d22687a7ea932e4fa8bfaea36cdb39793f3727894be3b1141c08d76aa",
+      "git_blob_sha1": "ed97dcf1dda180d841f3274b3024cc140802eeea",
+      "utf8": true,
+      "source_path": "tools/record-key-collision-audit/verification.json"
+    },
+    {
+      "path": "LICENSE",
+      "size_bytes": 1076,
+      "sha256": "dce76471613629e93f3f98b7aaa6f72ff9adb88204a3f83d3045952017ab2f46",
+      "git_blob_sha1": "677c4463d59b560db9c1fde1052eff6eefa6441a",
+      "utf8": true,
+      "source_path": "LICENSE"
+    },
+    {
+      "path": ".gitignore",
+      "size_bytes": 62,
+      "sha256": "e4d5aecc4cd36f593c2e7f3dad08b24261b13466b898004a445614058d29d8de",
+      "git_blob_sha1": "fe9f8fb619601213cbfef4f6eadb5d413d8f7f01",
+      "utf8": true,
+      "source_path": ".gitignore"
+    }
+  ],
+  "readme_checks": [
+    {
+      "label": "README example",
+      "args": [
+        "tool.py",
+        "examples/pass.json",
+        "--key",
+        "tenant",
+        "--key",
+        "id"
+      ],
+      "expected_exit": 0,
+      "output": "json",
+      "documented_command": "python3 tool.py examples/pass.json --key tenant --key id"
+    },
+    {
+      "label": "README example",
+      "args": [
+        "tool.py",
+        "examples/fail.json",
+        "--key",
+        "tenant",
+        "--key",
+        "id"
+      ],
+      "expected_exit": 1,
+      "output": "json",
+      "documented_command": "python3 tool.py examples/fail.json --key tenant --key id"
+    },
+    {
+      "label": "README example",
+      "args": [
+        "tool.py",
+        "examples/malformed.json",
+        "--key",
+        "tenant",
+        "--key",
+        "id"
+      ],
+      "expected_exit": 2,
+      "output": "json",
+      "documented_command": "python3 tool.py examples/malformed.json --key tenant --key id"
+    },
+    {
+      "label": "CLI help",
+      "args": [
+        "tool.py",
+        "--help"
+      ],
+      "expected_exit": 0,
+      "output": "help"
+    },
+    {
+      "label": "CLI missing input",
+      "args": [
+        "tool.py"
+      ],
+      "expected_exit": 2,
+      "output": "json"
+    },
+    {
+      "label": "CLI unknown argument",
+      "args": [
+        "tool.py",
+        "--unsupported-migration-test"
+      ],
+      "expected_exit": 2,
+      "output": "json"
+    }
+  ]
+}
